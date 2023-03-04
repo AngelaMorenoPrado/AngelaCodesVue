@@ -38,8 +38,6 @@ export const store = createStore({
         },
         addActivity(context, payload)
         {
-            console.log('payload')
-            console.log(payload)
             context.commit('addActivity', payload)
         }
     }
