@@ -1,5 +1,5 @@
 <template>
-  <product-list-one :products="products"></product-list-one>
+  <product-list-one></product-list-one>
   <product-list-two :products="products"></product-list-two>
 </template>
 

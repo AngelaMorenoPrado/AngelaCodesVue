@@ -11,9 +11,18 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
+import { computed } from 'vue'
+
 export default {
     name: 'ProductListOne',
-    props: ['products'],
+    setup() {
+        const store = useStore()
+
+        return {
+            products: computed(() => store.state.products)
+        }
+    },
     components: {
 
     },
