@@ -1,6 +1,6 @@
 <template>
   <product-list-one></product-list-one>
-  <product-list-two :products="products"></product-list-two>
+  <product-list-two></product-list-two>
 </template>
 
 <script>
