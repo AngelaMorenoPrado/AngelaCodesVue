@@ -1,9 +1,6 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { createStore } from "vuex";
 
-Vue.useAttrs(Vuex);
-
-export const store = new Vuex.Store({
+export default createStore({
     state: {
         products: [
             {name: 'Banana Skin', price: 20},
