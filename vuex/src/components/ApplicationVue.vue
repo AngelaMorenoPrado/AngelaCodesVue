@@ -8,7 +8,7 @@
         <span>{{plan.name}} - </span>
         <button @click="incrementVote(plan.id)">👍</button>
         {{plan.votes}}
-        <button>👎</button>
+        <button @click="decrementVote(plan.id)">👎</button>
       </li>
     </ul>
   </div>
@@ -28,7 +28,8 @@ export default {
 
     return {
       plans: computed(() => store.state.plans),
-      incrementVote: (id) => store.dispatch('incrementVote', id)
+      incrementVote: (id) => store.dispatch('incrementVote', id),
+      decrementVote: (id) => store.dispatch('decrementVote', id)
     }
   }
 }
