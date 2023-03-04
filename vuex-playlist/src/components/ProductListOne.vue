@@ -7,7 +7,7 @@
                 <span class='price'>{{ product.price }}</span>
             </li>
         </ul>
-        <button @click="reducePrice">Reduce Price</button>
+        <button @click="asyncReducePrice(4)">Reduce Price</button>
     </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
         return {
             products: computed(() => store.state.products),
             halfPriceProducts: computed(() => store.getters.getHalfPrice),
-            reducePrice: () => store.commit('reducePrice')
+            reducePrice: () => store.commit('reducePrice'),
+            asyncReducePrice: (amount) => store.dispatch('reducePrice', amount)
         }
     },
     components: {

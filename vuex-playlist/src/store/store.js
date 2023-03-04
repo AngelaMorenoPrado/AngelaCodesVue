@@ -25,11 +25,16 @@ export const store = createStore({
         }
     },
     mutations: {
-        reducePrice(state)
+        reducePrice(state, payload)
         {
             state.products.forEach( product => {
-                product.price -= 1;
+                product.price -= payload;
             })
+        }
+    },
+    actions: {
+        reducePrice(context, payload) {
+            context.commit('reducePrice', payload);
         }
     }
 });
