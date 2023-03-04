@@ -10,5 +10,18 @@ export const store = createStore({
                 {name: 'Red Shells', price: 80}
             ]
         }
+    },
+    getters: {
+        getHalfPrice(state)
+        {
+            const halfPrice = state.products.map(product => {
+                return {
+                    name: product.name,
+                    price: product.price / 2
+                }
+            });
+
+            return halfPrice;
+        }
     }
 });

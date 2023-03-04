@@ -2,7 +2,7 @@
     <div id='ProductListOne'>
         <h2>Product List One</h2>
         <ul>
-            <li v-for="product in products" :key="product.name">
+            <li v-for="product in halfPriceProducts" :key="product.name">
                 <span class='name'>{{ product.name }} - </span>
                 <span class='price'>{{ product.price }}</span>
             </li>
@@ -20,7 +20,8 @@ export default {
         const store = useStore()
 
         return {
-            products: computed(() => store.state.products)
+            products: computed(() => store.state.products),
+            halfPriceProducts: computed(() => store.getters.getHalfPrice)
         }
     },
     components: {
