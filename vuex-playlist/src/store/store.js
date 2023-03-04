@@ -23,5 +23,13 @@ export const store = createStore({
 
             return halfPrice;
         }
+    },
+    mutations: {
+        reducePrice(state)
+        {
+            state.products.forEach( product => {
+                product.price -= 1;
+            })
+        }
     }
 });
