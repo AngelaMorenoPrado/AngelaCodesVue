@@ -6,7 +6,7 @@
     <ul>
       <li v-for="plan in plans" :key="plan.name">
         <span>{{plan.name}} - </span>
-        <button>👍</button>
+        <button @click="incrementVote(plan.id)">👍</button>
         {{plan.votes}}
         <button>👎</button>
       </li>
@@ -27,7 +27,8 @@ export default {
     const store = useStore()
 
     return {
-      plans: computed(() => store.state.plans)
+      plans: computed(() => store.state.plans),
+      incrementVote: (id) => store.dispatch('incrementVote', id)
     }
   }
 }
