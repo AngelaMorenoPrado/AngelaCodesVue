@@ -1,8 +1,7 @@
 <template>
   <div id="ApllicationVue">
-    <input type="text" placeholder="Add activity here"/>
-    <button>Add activity</button>
-
+    <input type="text" v-model="activityName" placeholder="Add activity here"/>
+    <button @click="addActivity">Add activity</button>
     <ul>
       <li v-for="plan in plans" :key="plan.name">
         <span>{{plan.name}} - </span>
@@ -29,7 +28,21 @@ export default {
     return {
       plans: computed(() => store.state.plans),
       incrementVote: (id) => store.dispatch('incrementVote', id),
-      decrementVote: (id) => store.dispatch('decrementVote', id)
+      decrementVote: (id) => store.dispatch('decrementVote', id),
+      //addActivity: (activity) => store.dispatch('addActivity', activity)
+    }
+  },
+  data() {
+    return {
+      activityName: ''
+    }
+  },
+  methods: {
+    addActivity: function()
+    {
+      console.log('this')
+      console.log(this.activityName)
+      this.$store.dispatch('addActivity', this.activityName);
     }
   }
 }

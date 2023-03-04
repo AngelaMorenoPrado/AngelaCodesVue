@@ -21,6 +21,10 @@ export const store = createStore({
             state.plans.forEach(plan => {
                 plan.id === payload ? plan.votes -= 1 : ''
             })
+        },
+        addActivity(state, payload)
+        {
+            state.plans.push({id: 2, name: payload, votes: 0})
         }
     },
     actions: {
@@ -31,6 +35,12 @@ export const store = createStore({
         decrementVote(context, payload)
         {
             context.commit('decrementPlan', payload)
+        },
+        addActivity(context, payload)
+        {
+            console.log('payload')
+            console.log(payload)
+            context.commit('addActivity', payload)
         }
     }
 })
