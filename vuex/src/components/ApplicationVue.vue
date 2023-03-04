@@ -40,8 +40,6 @@ export default {
   methods: {
     addActivity: function()
     {
-      console.log('this')
-      console.log(this.activityName)
       this.$store.dispatch('addActivity', this.activityName);
     }
   }
@@ -59,7 +57,8 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px 10px;
+  width: 100%;
 }
 a {
   color: #42b983;
